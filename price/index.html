@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="../assets/logo.png">
+<meta property="og:image" content="../assets/logo.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Home vs. New Construction | J &amp; S Bay Realty – Pasco &amp; Hillsborough</title>
+<meta name="description" content="See how your Pasco or Hillsborough home stacks up against new construction nearby. Free comparison from Javier A. Pagan, Broker/Owner, J &amp; S Bay Realty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B0B0B;      /* brand black */
+    --navy-2:#1C1C1C;
+    --teal:#9A7A22;      /* deep gold (text on light) */
+    --sand:#D4AF37;      /* brand gold / CTA */
+    --sand-dark:#B8942B;
+    --cream:#FAF7F0;
+    --ink:#1B2430;
+    --muted:#5B6675;
+    --line:#E4DED3;
+    --white:#fff;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(0,0,0,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55;font-size:16px;padding-bottom:76px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--navy)}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:#0B0B0B;border-bottom:1px solid rgba(212,175,55,.35)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{height:46px;width:auto}
+  .brand-text{font-family:Fraunces,serif;font-weight:700;color:var(--sand);font-size:1.05rem;line-height:1.1}
+  .brand-text small{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:.68rem;color:#CFC6B0;letter-spacing:.06em;text-transform:uppercase}
+  .lang{display:flex;border:1.5px solid var(--sand);border-radius:999px;overflow:hidden}
+  .lang button{border:0;background:transparent;padding:6px 12px;font:600 .8rem Inter,sans-serif;color:var(--sand);cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--sand);color:#0B0B0B}
+
+  /* Hero */
+  .hero{background:radial-gradient(120% 80% at 100% 0%,#2B2414 0%,transparent 60%),linear-gradient(170deg,#0B0B0B 0%,#161616 100%);color:var(--white);position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:48px;background:var(--cream);clip-path:ellipse(75% 100% at 50% 100%)}
+  .hero-grid{display:grid;gap:28px;padding-top:36px;padding-bottom:72px;position:relative;z-index:1}
+  .eyebrow{display:inline-block;background:rgba(212,175,55,.18);color:var(--sand);border:1px solid rgba(212,175,55,.45);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .hero h1{color:var(--white);font-size:clamp(2rem,7.5vw,3.3rem);margin:14px 0 12px}
+  .hero h1 em{font-style:normal;color:var(--sand)}
+  .hero p.lead{font-size:1.08rem;color:#E6E0D2;max-width:34ch}
+  .checks{list-style:none;margin:18px 0 0;display:grid;gap:8px}
+  .checks li{display:flex;gap:10px;align-items:flex-start;color:#EFEADF;font-size:.96rem}
+  .checks li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;background:var(--sand);color:var(--navy);font-weight:700;font-size:.8rem;display:grid;place-items:center;margin-top:1px}
+
+  /* Form card */
+  .card{background:var(--white);color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .card h2{font-size:1.4rem;margin-bottom:4px}
+  .card .sub{color:var(--muted);font-size:.92rem;margin-bottom:16px}
+  .field{margin-bottom:12px}
+  label{display:block;font-weight:600;font-size:.86rem;margin-bottom:5px;color:var(--navy)}
+  input,select{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:#FFFDF9;color:var(--ink);transition:border-color .15s}
+  input:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(212,175,55,.18)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.76rem;color:var(--muted);margin:6px 0 14px;line-height:1.45}
+  .consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:var(--teal)}
+  .hp{position:absolute;left:-9999px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;border:0;border-radius:10px;padding:15px 18px;font:700 1.02rem Inter,sans-serif;cursor:pointer;text-decoration:none;transition:transform .1s,background .15s}
+  .btn:active{transform:scale(.98)}
+  .btn-sand{background:var(--sand);color:var(--navy)}
+  .btn-sand:hover{background:var(--sand-dark)}
+  .btn-navy{background:var(--navy);color:var(--white)}
+  .btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+  .fine{font-size:.72rem;color:var(--muted);margin-top:10px;text-align:center}
+  .form-msg{display:none;margin-top:12px;padding:12px;border-radius:10px;font-size:.92rem}
+  .form-msg.ok{display:block;background:#E7F4F1;color:#155E52}
+  .form-msg.err{display:block;background:#FCEDEA;color:#8A2A1A}
+
+  /* Sections */
+  section{padding:52px 0}
+  .kicker{color:var(--teal);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+  .sec-title{font-size:clamp(1.6rem,5.5vw,2.3rem);margin:6px 0 10px}
+  .sec-lead{color:var(--muted);max-width:60ch}
+  .why-grid{display:grid;gap:14px;margin-top:26px}
+  .why{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:20px;display:flex;gap:14px}
+  .why .ico{flex:none;width:44px;height:44px;border-radius:12px;background:rgba(212,175,55,.1);display:grid;place-items:center}
+  .why .ico svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .why h3{font-size:1.08rem;margin-bottom:4px}
+  .why p{color:var(--muted);font-size:.94rem}
+
+  /* Steps */
+  .steps{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .step-list{list-style:none;display:grid;gap:18px;margin-top:24px;counter-reset:s}
+  .step-list li{display:flex;gap:14px;align-items:flex-start}
+  .step-list li::before{counter-increment:s;content:counter(s);flex:none;width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--sand);font:700 1rem Fraunces,serif;display:grid;place-items:center}
+  .step-list b{display:block;color:var(--navy)}
+  .step-list span{color:var(--muted);font-size:.94rem}
+
+  /* About */
+  .about-grid{display:grid;gap:24px;align-items:center}
+  .photo{position:relative;max-width:340px;margin:0 auto;width:100%}
+  .photo img{border-radius:var(--radius);aspect-ratio:2/3;object-fit:cover;object-position:top;width:100%;background:#0B0B0B;border:2px solid var(--sand)}
+  .photo .tag{position:absolute;left:14px;bottom:-14px;background:var(--sand);color:var(--navy);font-weight:700;font-size:.82rem;padding:8px 14px;border-radius:999px;box-shadow:var(--shadow)}
+  .about p{color:var(--muted);margin-bottom:12px}
+  .sig{font-family:Fraunces,serif;color:var(--navy);font-weight:600;margin-top:6px}
+  .sig small{display:block;font-family:Inter,sans-serif;font-weight:500;color:var(--teal);font-size:.82rem}
+
+  /* CTA band */
+  .cta{background:#0B0B0B;border:1px solid rgba(212,175,55,.4);color:var(--white);text-align:center;border-radius:var(--radius);padding:34px 22px;margin:0 20px}
+  .cta h2{color:var(--white);font-size:clamp(1.5rem,5.5vw,2.1rem);margin-bottom:8px}
+  .cta p{color:#E6E0D2;margin-bottom:20px}
+  .cta-brand{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:16px}
+  .cta-logo{height:96px;width:auto}
+  .cta-head{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--sand)}
+  .cta-actions{display:grid;gap:10px;max-width:420px;margin:0 auto}
+  .cta .btn-outline{color:var(--white);border-color:rgba(255,255,255,.6)}
+
+  /* Footer */
+  footer{padding:40px 0 30px;font-size:.82rem;color:var(--muted)}
+  footer .row{display:grid;gap:12px}
+  footer a{color:var(--navy);font-weight:600;text-decoration:none}
+  .eho{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--navy)}
+  .eho svg{width:26px;height:26px}
+  .more{margin-top:18px;font-size:.82rem;line-height:1.9}
+  .more a{white-space:nowrap}
+  .legal{margin-top:14px;font-size:.72rem;line-height:1.5}
+
+  /* Sticky mobile CTA */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--white);border-top:1px solid var(--line);padding:10px 12px;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+  .sticky .btn{padding:13px 10px;font-size:.95rem}
+
+  @media (min-width:860px){
+    body{padding-bottom:0}
+    .sticky{display:none}
+    .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center;padding-top:64px;padding-bottom:96px}
+    .why-grid{grid-template-columns:1fr 1fr}
+    .step-list{grid-template-columns:repeat(3,1fr)}
+    .about-grid{grid-template-columns:.8fr 1.2fr;gap:48px}
+    .photo{margin:0}
+    .cta{max-width:1040px;margin:0 auto;padding:48px}
+    .cta-actions{grid-template-columns:1fr 1fr}
+    footer .row{grid-template-columns:1fr auto;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="J & S Bay Realty">
+      <!-- Replace assets/logo.png with your logo -->
+      <img src="../assets/logo.png" alt="J & S Bay Realty logo" onerror="this.style.display='none'">
+      <span class="brand-text">J &amp; S Bay Realty<small data-i18n="tagline">Pasco · Hillsborough</small></span>
+    </a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO + FORM -->
+  <section class="hero" style="padding:0">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow" data-i18n="eyebrow">Free comparison</span>
+        <h1 data-i18n-html="h1">New construction is your <em>competition</em></h1>
+        <p class="lead" data-i18n="lead">See how your home stacks up against new builds nearby, and how to price and prep it so buyers choose yours.</p>
+        <ul class="checks">
+          <li data-i18n="c1">Your home vs. new builds in your area</li>
+          <li data-i18n="c2">The incentives builders are offering buyers right now</li>
+          <li data-i18n="c3">Where your home wins: move-in ready, no build wait</li>
+          <li data-i18n="c4">24+ years of real estate and finance experience</li>
+        </ul>
+      </div>
+
+      <div class="card" id="report">
+        <h2 data-i18n="formTitle">Get my free comparison</h2>
+        <p class="sub" data-i18n="formSub">Takes less than a minute.</p>
+        <form id="leadForm" novalidate>
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field">
+            <label for="name" data-i18n="lName">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required data-i18n-ph="pName" placeholder="Jane Smith">
+          </div>
+          <div class="field">
+            <label for="phone" data-i18n="lPhone">Phone</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(813) 555-0123">
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="lEmail">Email</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@email.com">
+          </div>
+          <div class="field">
+            <label for="address" data-i18n="lAddress">Property address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" required data-i18n-ph="pAddress" placeholder="Street, city, ZIP">
+          </div>
+          <div class="field">
+            <label for="timeline" data-i18n="lTimeline">When are you thinking of selling?</label>
+            <select id="timeline" name="timeline" required>
+              <option value="" data-i18n="tSelect">Select one</option>
+              <option value="0-3 months" data-i18n="t1">In the next 3 months</option>
+              <option value="3-6 months" data-i18n="t2">3–6 months</option>
+              <option value="6-12 months" data-i18n="t3">6–12 months</option>
+              <option value="12+ months" data-i18n="t4">More than a year</option>
+              <option value="Just curious" data-i18n="t5">Just curious about my value</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" name="consent" id="consent" required>
+            <span data-i18n="consent">By checking this box, I agree that J &amp; S Bay Realty may contact me by phone, text and email about my home value and real estate services, including by automated means. Consent is not required to buy or sell. Message/data rates may apply. Reply STOP to opt out.</span>
+          </label>
+          <input type="hidden" name="language" id="langField" value="en">
+          <input type="hidden" name="offer" value="New construction comparison">
+          <button class="btn btn-sand" type="submit" data-i18n="submit">Show me how my home compares →</button>
+          <p class="fine" data-i18n="fine">Your information stays private and is never sold.</p>
+          <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY LIST -->
+  <section id="why">
+    <div class="wrap">
+      <span class="kicker" data-i18n="whyK">Why list with us</span>
+      <h2 class="sec-title" data-i18n="whyT">A brokerage built for sellers</h2>
+      <p class="sec-lead" data-i18n="whyL">J &amp; S Bay Realty focuses on one thing: helping Pasco and Hillsborough homeowners sell for the best price, with less stress.</p>
+      <div class="why-grid">
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></div>
+          <div><h3 data-i18n="w1t">You work with the broker</h3><p data-i18n="w1p">No hand-offs to a junior agent. I'm your point of contact from the first call to closing day.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <div><h3 data-i18n="w2t">Pricing backed by local data</h3><p data-i18n="w2p">Your price comes from current MLS sales in your neighborhood — so you don't leave money on the table or sit on the market.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <div><h3 data-i18n="w7t">A broker who knows the money side</h3><p data-i18n="w7p">With a background in mortgage lending and banking, I help you understand your equity and your net proceeds, and I check whether a buyer can really close.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6l2-3h4l2 3"/></svg></div>
+          <div><h3 data-i18n="w3t">Professional photos &amp; video</h3><p data-i18n="w3p">I shoot every listing myself with professional gear, then market it across social media, email and the MLS.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg></div>
+          <div><h3 data-i18n="w4t">Prep advice from a builder's eye</h3><p data-i18n="w4p">With a construction background, I'll tell you which small updates are worth it before listing — and which ones aren't.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"/></svg></div>
+          <div><h3 data-i18n="w5t">Bilingual service</h3><p data-i18n="w5p">Hablamos español. Every conversation, document review and update in the language you're most comfortable with.</p></div>
+        </div>
+        <div class="why">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><h3 data-i18n="w6t">Local to Pasco &amp; Hillsborough</h3><p data-i18n="w6p">From Wesley Chapel and Land O' Lakes to Tampa and Brandon — I know these markets street by street.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps">
+    <div class="wrap">
+      <span class="kicker" data-i18n="howK">How it works</span>
+      <h2 class="sec-title" data-i18n="howT">Three simple steps</h2>
+      <ol class="step-list">
+        <li><div><b data-i18n="s1t">Tell us about your home</b><span data-i18n="s1p">Fill out the short form above.</span></div></li>
+        <li><div><b data-i18n="s2t">I compare it to new builds</b><span data-i18n="s2p">Recent resale and new construction activity near you.</span></div></li>
+        <li><div><b data-i18n="s3t">Get your strategy</b><span data-i18n="s3p">Price, prep and positioning to compete. No pressure.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="wrap about-grid">
+      <div class="photo">
+        <!-- Replace assets/javier.jpg with your headshot -->
+        <img src="../assets/javier.jpg" alt="Javier A. Pagan, Broker/Owner of J & S Bay Realty" onerror="this.removeAttribute('src');this.alt=''">
+        <span class="tag" data-i18n="aboutTag">24+ years · Broker/Owner</span>
+      </div>
+      <div>
+        <span class="kicker" data-i18n="aboutK">Meet your broker</span>
+        <h2 class="sec-title">Javier A. Pagan</h2>
+        <p data-i18n="a1">I'm the Broker/Owner of J &amp; S Bay Realty, a seller-focused brokerage serving Pasco and Hillsborough counties. When you list with us, you're working directly with me — not a call center or a team of assistants.</p>
+        <p data-i18n="a1b">I've spent more than 24 years in real estate and finance. Before opening my brokerage, I was a mortgage broker for 6 years and worked 6 years in banking at a major national bank, where I held Series 6, variable annuity and insurance licenses. That background means I look at your sale the way a lender does: your equity, your payoff, and what you'll actually walk away with.</p>
+        <p data-i18n="a2">I photograph and film every listing myself, price homes from current local sales data, and bring a builder's eye to getting your home ready for market. Whether you're upsizing, downsizing, relocating or settling an estate, my job is to make the process clear and get you the strongest result.</p>
+        <p data-i18n="a3">I serve families in English and Spanish, and I treat every seller the way I'd want my own family treated.</p>
+        <p class="sig">Javier A. Pagan<small data-i18n="sigT">Broker/Owner, J &amp; S Bay Realty</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding-top:0">
+    <div class="cta">
+      <div class="cta-brand">
+        <img class="cta-head" src="../assets/javier.jpg" alt="Javier A. Pagan" onerror="this.style.display='none'">
+        <img class="cta-logo" src="../assets/logo.png" alt="J & S Bay Realty logo" onerror="this.style.display='none'">
+      </div>
+      <h2 data-i18n="ctaT">Win against new construction</h2>
+      <p data-i18n="ctaP">Know where your home stands before you list. Get the comparison or call me directly.</p>
+      <div class="cta-actions">
+        <a class="btn btn-sand" href="#report" data-i18n="ctaB1">Get my free comparison</a>
+        <a class="btn btn-outline" href="tel:+18135512835" data-i18n="ctaB2">Call (813) 551-2835</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <strong style="color:var(--navy)">J &amp; S Bay Realty</strong> · Javier A. Pagan, <span data-i18n="brokerOwner">Broker/Owner</span><br>
+        <a href="tel:+18135512835">(813) 551-2835</a> · <a href="mailto:info@jsbayrealty.com">info@jsbayrealty.com</a><br>
+        <span data-i18n="serving">Serving Pasco &amp; Hillsborough Counties, Florida</span>
+      </div>
+      <div class="eho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B0B0B" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 14h6M9 17h6"/></svg>
+        <span data-i18n="eho">Equal Housing Opportunity</span>
+      </div>
+    </div>
+    <nav class="more" aria-label="Free resources">
+      <strong data-i18n="moreT">More free resources:</strong>
+      <a href="../sell/" data-i18n="m0">Home value</a> ·
+      <a href="../ready/" data-i18n="m1">Pre-listing walkthrough</a> ·
+      <a href="../curb/" data-i18n="m2">Curb appeal checklist</a> ·
+      <a href="../price/" data-i18n="m3">Vs. new construction</a> ·
+      <a href="../market/" data-i18n="m4">Market report</a>
+    </nav>
+    <p class="legal" data-i18n="legal">The home value report is a comparative market analysis (broker opinion of value) for marketing purposes. It is not an appraisal and should not be used in place of one. If your home is currently listed with another brokerage, please disregard this offer; it is not intended as a solicitation. J &amp; S Bay Realty, licensed Florida real estate brokerage, Lic. CQ1073192. Javier A. Pagan, Licensed Real Estate Broker in the State of Florida, Lic. BK3024077.</p>
+    <p class="legal">© <span id="yr"></span> J &amp; S Bay Realty.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky">
+  <a class="btn btn-outline" href="tel:+18135512835" data-i18n="stCall">📞 Call</a>
+  <a class="btn btn-sand" href="#report" data-i18n="stReport">Free comparison</a>
+</div>
+
+<script>
+/* ==== SETTINGS ====
+   Paste a form endpoint (Formspree, Getform, Google Apps Script, etc.) to receive leads.
+   Leave empty and the form opens a pre-filled email to info@jsbayrealty.com instead. */
+const FORM_ENDPOINT = "";
+const CONTACT_EMAIL = "info@jsbayrealty.com";
+const PAGE_TITLE = {
+  en:"Your Home vs. New Construction | J & S Bay Realty – Pasco & Hillsborough",
+  es:"Su Casa vs. Construcción Nueva | J & S Bay Realty – Pasco y Hillsborough"
+};
+
+const T = {
+  es: {
+    tagline:"Pasco · Hillsborough",
+    eyebrow:"Comparación gratis",
+    h1:"La construcción nueva es su <em>competencia</em>",
+    lead:"Vea cómo compite su casa con las construcciones nuevas cerca de usted, y cómo ponerle precio y prepararla para que los compradores escojan la suya.",
+    c1:"Su casa vs. construcciones nuevas en su área",
+    c2:"Los incentivos que los constructores ofrecen ahora",
+    c3:"Dónde gana su casa: lista para mudarse, sin esperar construcción",
+    c4:"Más de 24 años de experiencia en bienes raíces y finanzas",
+    w7t:"Un bróker que entiende la parte del dinero", w7p:"Con experiencia en préstamos hipotecarios y banca, le ayudo a entender su equity y cuánto le queda neto, y verifico si el comprador de verdad puede cerrar.",
+    a1b:"Llevo más de 24 años en bienes raíces y finanzas. Antes de abrir mi agencia, fui mortgage broker por 6 años y trabajé 6 años en banca en un banco nacional, donde tuve las licencias Series 6, de anualidades variables y de seguros. Esa experiencia me permite ver su venta como la ve un prestamista: su equity, el balance de su hipoteca y lo que realmente le queda en el bolsillo.",
+    formTitle:"Quiero mi comparación gratis",
+    formSub:"Toma menos de un minuto.",
+    lName:"Nombre completo", pName:"Juan Pérez",
+    lPhone:"Teléfono", lEmail:"Correo electrónico",
+    lAddress:"Dirección de la propiedad", pAddress:"Calle, ciudad, código postal",
+    lTimeline:"¿Cuándo piensa vender?",
+    tSelect:"Seleccione una opción", t1:"En los próximos 3 meses", t2:"En 3–6 meses", t3:"En 6–12 meses", t4:"En más de un año", t5:"Solo quiero saber el valor",
+    consent:"Al marcar esta casilla, acepto que J & S Bay Realty me contacte por teléfono, texto y correo electrónico sobre el valor de mi casa y servicios de bienes raíces, incluso por medios automatizados. El consentimiento no es requisito para comprar o vender. Pueden aplicar cargos de mensajes/datos. Responda STOP para cancelar.",
+    submit:"Muéstrenme cómo compite mi casa →",
+    fine:"Su información es privada y nunca se vende.",
+    whyK:"Por qué listar con nosotros", whyT:"Una agencia hecha para vendedores",
+    whyL:"J & S Bay Realty se enfoca en una sola cosa: ayudar a los dueños de casa en Pasco y Hillsborough a vender al mejor precio, con menos estrés.",
+    w1t:"Trabaja directamente con el bróker", w1p:"Sin pasarle a un agente nuevo. Yo soy su contacto desde la primera llamada hasta el día del cierre.",
+    w2t:"Precio basado en datos locales", w2p:"Su precio sale de las ventas actuales del MLS en su vecindario — para no dejar dinero en la mesa ni quedarse estancado en el mercado.",
+    w3t:"Fotos y video profesionales", w3p:"Fotografío cada propiedad yo mismo con equipo profesional y la promociono en redes sociales, correo electrónico y el MLS.",
+    w4t:"Consejos de preparación con ojo de constructor", w4p:"Con experiencia en construcción, le digo qué arreglos pequeños valen la pena antes de listar — y cuáles no.",
+    w5t:"Servicio bilingüe", w5p:"We speak English. Cada conversación, revisión de documentos y actualización en el idioma que usted prefiera.",
+    w6t:"Local en Pasco y Hillsborough", w6p:"Desde Wesley Chapel y Land O' Lakes hasta Tampa y Brandon — conozco estos mercados calle por calle.",
+    howK:"Cómo funciona", howT:"Tres pasos sencillos",
+    s1t:"Cuéntenos de su casa", s1p:"Llene el formulario corto de arriba.",
+    s2t:"La comparo con casas nuevas", s2p:"Ventas recientes y construcción nueva cerca de usted.",
+    s3t:"Reciba su estrategia", s3p:"Precio, preparación y presentación para competir. Sin presión.",
+    aboutTag:"24+ años · Broker/Owner", aboutK:"Conozca a su bróker",
+    a1:"Soy el Broker/Owner de J & S Bay Realty, una agencia enfocada en vendedores que sirve los condados de Pasco y Hillsborough. Cuando lista con nosotros, trabaja directamente conmigo — no con un centro de llamadas ni con un equipo de asistentes.",
+    a2:"Fotografío y grabo cada propiedad yo mismo, pongo precios basados en ventas locales actuales y uso mi experiencia en construcción para preparar su casa para el mercado. Ya sea que se esté mudando a algo más grande, más pequeño, a otra ciudad o resolviendo una herencia, mi trabajo es que el proceso sea claro y lograr el mejor resultado.",
+    a3:"Atiendo a familias en inglés y español, y trato a cada vendedor como quisiera que trataran a mi propia familia.",
+    sigT:"Broker/Owner, J & S Bay Realty",
+    ctaT:"Gánele a la construcción nueva", ctaP:"Sepa dónde está su casa antes de listar. Pida la comparación o llámeme directamente.",
+    ctaB1:"Quiero mi comparación gratis", ctaB2:"Llamar al (813) 551-2835",
+    brokerOwner:"Broker/Owner", serving:"Sirviendo los condados de Pasco y Hillsborough, Florida",
+    eho:"Igualdad de Oportunidades en la Vivienda",
+    legal:"El reporte de valor es un análisis comparativo de mercado (opinión de valor del bróker) con fines de mercadeo. No es una tasación y no debe usarse en lugar de una. Si su casa está actualmente listada con otra agencia, por favor ignore esta oferta; no es una solicitud. J & S Bay Realty, agencia de bienes raíces con licencia en Florida, Lic. CQ1073192. Javier A. Pagan, Bróker de Bienes Raíces con licencia en el Estado de Florida, Lic. BK3024077.",
+    moreT:"Más recursos gratis:", m0:"Valor de su casa", m1:"Revisión antes de listar", m2:"Lista para el frente", m3:"Vs. construcción nueva", m4:"Reporte de mercado",
+    stCall:"📞 Llamar", stReport:"Comparación gratis",
+    ok:"¡Gracias! Recibí su información. Le contactaré pronto con su reporte. — Javier",
+    okMail:"Se abrió su correo con la información. Solo presione Enviar y le contactaré pronto. — Javier",
+    err:"Por favor complete todos los campos y marque la casilla de consentimiento.",
+    fail:"Algo salió mal. Llame o escriba al (813) 551-2835."
+  },
+  en:{}
+};
+const extraEN = {
+  ok:"Thank you! I received your information and will contact you soon with your report. — Javier",
+  okMail:"Your email app opened with your details. Just tap Send and I'll be in touch soon. — Javier",
+  err:"Please complete all fields and check the consent box.",
+  fail:"Something went wrong. Call or text (813) 551-2835."
+};
+
+// Capture English from the page itself
+document.querySelectorAll("[data-i18n]").forEach(el => T.en[el.dataset.i18n] = el.textContent);
+document.querySelectorAll("[data-i18n-html]").forEach(el => T.en[el.dataset.i18nHtml] = el.innerHTML);
+document.querySelectorAll("[data-i18n-ph]").forEach(el => T.en[el.dataset.i18nPh] = el.placeholder);
+Object.assign(T.en, extraEN);
+
+let lang = "en";
+function setLang(l){
+  lang = l;
+  const d = T[l];
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(el => { if(d[el.dataset.i18n]) el.textContent = d[el.dataset.i18n]; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { if(d[el.dataset.i18nHtml]) el.innerHTML = d[el.dataset.i18nHtml]; });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { if(d[el.dataset.i18nPh]) el.placeholder = d[el.dataset.i18nPh]; });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  document.getElementById("langField").value = l;
+  document.title = PAGE_TITLE[l];
+  try { localStorage.setItem("jsb_lang", l); } catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+// Initial language: ?lang=es in the URL (great for Spanish ads) > saved choice > phone setting
+let start = "en";
+try {
+  const q = new URLSearchParams(location.search).get("lang");
+  const saved = localStorage.getItem("jsb_lang");
+  start = q || saved || ((navigator.language || "").toLowerCase().startsWith("es") ? "es" : "en");
+} catch(e){}
+setLang(start === "es" ? "es" : "en");
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// Form
+const form = document.getElementById("leadForm");
+const msg = document.getElementById("formMsg");
+function show(type, key){ msg.className = "form-msg " + type; msg.textContent = T[lang][key]; }
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  if (form.company.value) return; // spam bot
+  const f = Object.fromEntries(new FormData(form));
+  if (!f.name || !f.phone || !f.email || !f.address || !f.timeline || !form.consent.checked || !form.email.checkValidity()){
+    show("err","err"); return;
+  }
+  const data = {
+    name:f.name, phone:f.phone, email:f.email, address:f.address,
+    timeline:f.timeline, offer:f.offer, language:lang, consent:"yes", submitted:new Date().toISOString(),
+    source:"Seller landing page"
+  };
+  if (FORM_ENDPOINT){
+    try{
+      const r = await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)});
+      if(!r.ok) throw 0;
+      form.reset(); show("ok","ok");
+    }catch(err){ show("err","fail"); }
+  } else {
+    const body = Object.entries(data).map(([k,v]) => k + ": " + v).join("\n");
+    location.href = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(f.offer + " – " + f.address) + "&body=" + encodeURIComponent(body);
+    show("ok","okMail");
+  }
+});
+</script>
+</body>
+</html>
